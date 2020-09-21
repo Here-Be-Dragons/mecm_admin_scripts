@@ -1,0 +1,21 @@
+---
+stages:
+  - deploy
+  - approve
+
+upload scripts:
+  stage: deploy
+  script: 'powershell.exe ${CI_PROJECT_DIR}\install_scripts.ps1'
+  only:
+    - master
+  tags:
+    - windows
+    - mecm
+approve scripts:
+  stage: approve
+  script: 'powershell.exe ${CI_PROJECT_DIR}\approve_scripts.ps1'
+  only:
+    - master
+  tags:
+    - windows
+    - mecm
