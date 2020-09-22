@@ -19,10 +19,10 @@ This is a very basic pipeline and could be adapted to a number of different mech
 
 1. Place PowerShell (`.ps1` only) scripts in the `mecm_scripts/` folder and commit to a development branch.
 1. GitLab CI will pick up the changes when a merge to master occurs via PR, and:
-   1. Upload them.
-   1. Auto-approve them.
+   1. Upload them if checksum doesn't match the copy on the server.
+   1. Approve them if approval is outstanding.
 
-In the MECM interface, any scripts that are managed by this process will have "Approved by GitLab-CI" in the *Approval Notes* field.
+In the MECM interface, any scripts that are managed by this process will have "Approved by GitLab-CI" in the *Approval Notes* field, along with the last modifier's name.
 
 ## Automatic Script Naming
 
