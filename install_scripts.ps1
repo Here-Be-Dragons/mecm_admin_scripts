@@ -82,7 +82,7 @@ Foreach-Object {
       exit 1
     }
     Write-Host ("Uploaded `"" + $scriptName + "`".")
-  } elseif ( $updateScript -eq $true -And $checksumMismatch -eq $true ) {
+  } elseif ( $updateScript -eq $true ) {
     Write-Host ("Updating `"" + $scriptName + "`".")
     try { Set-CMScript -ScriptGuid $scriptGuid -ScriptFile $_.FullName }
     catch {
